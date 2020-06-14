@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AttendanceControl.Frontend
+namespace AttendanseControl
 {
     /// <summary>
-    /// Interaction logic for StartMenu.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class StartMenu : Page
+    public partial class MainWindow : Window
     {
-        public StartMenu()
+        public MainWindow()
         {
             InitializeComponent();
         }
