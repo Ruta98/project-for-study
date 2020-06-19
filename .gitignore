@@ -13,3 +13,7 @@
 /AttendanseControl/CLL/bin
 /AttendanseControl/BLL.Tests/bin
 /AttendanseControl/BLL.Tests/obj
+/AttendanseControl/Proxy/obj
+/AttendanseControl/Proxy/bin
+/AttendanseControl/States/obj
+/AttendanseControl/States/bin
