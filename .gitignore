@@ -7,3 +7,5 @@
 /AttendanseControl/AttendanseControl/Data/DAL/bin
 /AttendanseControl/AttendanseControl/Data/DAL.Tests/bin
 /AttendanseControl/AttendanseControl/Data/DAL.Tests/obj
+/AttendanseControl/BLL/obj
+/AttendanseControl/BLL/bin
