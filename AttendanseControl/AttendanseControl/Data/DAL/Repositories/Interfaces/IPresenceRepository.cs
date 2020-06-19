@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DAL.Repositories.Interfaces
 {
-    public interface IPresencesRepository : IRepository<Presence>
+    public interface IPresenceRepository : IRepository<Presence>
     {           
     }
 }
