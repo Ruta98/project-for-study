@@ -11,3 +11,5 @@
 /AttendanseControl/BLL/bin
 /AttendanseControl/CLL/obj
 /AttendanseControl/CLL/bin
+/AttendanseControl/BLL.Tests/bin
+/AttendanseControl/BLL.Tests/obj
