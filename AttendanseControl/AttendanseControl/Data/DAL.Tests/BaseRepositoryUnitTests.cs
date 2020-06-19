@@ -21,7 +21,7 @@ namespace DAL.Tests
     {
 
         [Fact]
-        public void Create_InputStreetInstance_CalledAddMethodOfDBSetWithStreetInstance()
+        public void Create_InputUserInstance_CalledAddMethodOfDBSetWithUserInstance()
         {
             // Arrange
             DbContextOptions opt = new DbContextOptionsBuilder<AttendanseControlContext>()
@@ -36,15 +36,15 @@ namespace DAL.Tests
             //EFUnitOfWork uow = new EFUnitOfWork(mockContext.Object);
             var repository = new TestPresenceRepository(mockContext.Object);
 
-            Presence expectedStreet = new Mock<Presence>().Object;
+            Presence expectedUser = new Mock<Presence>().Object;
 
             //Act
-            repository.Create(expectedStreet);
+            repository.Create(expectedUser);
 
             // Assert
             mockDbSet.Verify(
                 dbSet => dbSet.Add(
-                    expectedStreet
+                    expectedUser
                     ), Times.Once());
         }
 
@@ -62,23 +62,23 @@ namespace DAL.Tests
                         ))
                 .Returns(mockDbSet.Object);
             //EFUnitOfWork uow = new EFUnitOfWork(mockContext.Object);
-            //IStreetRepository repository = uow.Streets;
+            //IUserRepository repository = uow.Users;
             var repository = new TestPresenceRepository(mockContext.Object);
 
-            Presence expectedStreet = new Presence() { PresenceID = 1 };
-            mockDbSet.Setup(mock => mock.Find(expectedStreet.PresenceID)).Returns(expectedStreet);
+            Presence expectedUser = new Presence() { PresenceID = 1 };
+            mockDbSet.Setup(mock => mock.Find(expectedUser.PresenceID)).Returns(expectedUser);
 
             //Act
-            repository.Delete(expectedStreet.PresenceID);
+            repository.Delete(expectedUser.PresenceID);
 
             // Assert
             mockDbSet.Verify(
                 dbSet => dbSet.Find(
-                    expectedStreet.PresenceID
+                    expectedUser.PresenceID
                     ), Times.Once());
             mockDbSet.Verify(
                 dbSet => dbSet.Remove(
-                    expectedStreet
+                    expectedUser
                     ), Times.Once());
         }
 
@@ -96,20 +96,20 @@ namespace DAL.Tests
                         ))
                 .Returns(mockDbSet.Object);
 
-            Presence expectedStreet = new Presence() { PresenceID = 1 };
-            mockDbSet.Setup(mock => mock.Find(expectedStreet.PresenceID))
-                    .Returns(expectedStreet);
+            Presence expectedUser = new Presence() { PresenceID = 1 };
+            mockDbSet.Setup(mock => mock.Find(expectedUser.PresenceID))
+                    .Returns(expectedUser);
             var repository = new TestPresenceRepository(mockContext.Object);
 
             //Act
-            var actualStreet = repository.Get(expectedStreet.PresenceID);
+            var actualUser = repository.Get(expectedUser.PresenceID);
 
             // Assert
             mockDbSet.Verify(
                 dbSet => dbSet.Find(
-                    expectedStreet.PresenceID
+                    expectedUser.PresenceID
                     ), Times.Once());
-            Assert.Equal(expectedStreet, actualStreet);
+            Assert.Equal(expectedUser, actualUser);
         }
 
 
